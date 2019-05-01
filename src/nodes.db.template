@@ -1,0 +1,25 @@
+{
+  "capabilities": {
+    "singularity": "which singularity",
+    "slurm": "which sbatch"
+  },
+  "hosts": [
+    {
+      "capabilities": {},
+      "host": "HOST1",
+      "keyFile": null,
+      "port": 22,
+      "user": "USER1",
+      "dirs": [
+        "/mnt/dss/dtn"
+      ]
+    },
+    {
+      "capabilities": {},
+      "host": "HOST2",
+      "keyFile": null,
+      "port": 22,
+      "user": "USER2"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+	"udt": {
+		"name": "udt",
+		"src": {
+			"image": "recap/udt-singularity",
+			"cmd": "singularity run udt.img sendfile 9000",
+			"stop": "ps -C sendfile | grep -v PID | awk '{print $1}' | xargs kill -9"
+		},
+		"dst": {
+			"image": "recap/udt-singularity",
+			"cmd": "singularity run udt.img recvfile ##HOST## 9000 ##RPATH## ##LPATH##"
+		}
+	},
+	"http": {
+		"name": "http",
+		"src": {
+			"image": "recap/http-singularity",
+			"cmd": "singularity run http.img python -m SimpleHTTPServer 8080",
+            "stop": "ps -C 'python -m SimpleHTTPServer 8080' | grep -v grep | awk '{print $1}' | xargs kill -9"
+		},
+		"dst": {
+			"image": "recap/http-singularity",
+			"cmd": "singularity run http.img wget http://##HOST##:8080/##RPATH## -O ##LPATH##"
+		}
+	}
+}
