@@ -1,6 +1,6 @@
 # Plurality
 Plurality is a data staging service using containers to use custom protocol for data transfers between DTN (Data Transfer Nodes). 
-The minimum software stack for on a DTN server is ssh and Singularity. Plurailty assumes no root access to DTN nodes and uses Singularity containers to deploy
+The minimum software stack for on a DTN server is ssh and Singularity. Plurality assumes no root access to DTN nodes and uses Singularity containers to deploy
 custom data transfer protocols. 
 
 ## Setup config files
